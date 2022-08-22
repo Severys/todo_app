@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <addTodo/>
+    <filterTodo/>
     <todoList/>
   </div>
 </template>
@@ -8,12 +9,14 @@
 <script>
 import addTodo from './components/todo-add.vue';
 import todoList from './components/todo-list.vue';
+import filterTodo from './components/filter-todo.vue';
 
 export default {
   name: 'App',
   components: {
     addTodo,
-    todoList
+    todoList,
+    filterTodo
 }
 }
 </script>
@@ -23,6 +26,13 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #e0e0e0;
+  max-width: 800px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .btn {
 		padding: 8px;

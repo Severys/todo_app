@@ -2,12 +2,15 @@
   <div class="todoList">
 	<ul class="todoList_list" >
 		<li 
-			v-for="todo in this.todos"
-			:key="todo.index"
+			v-for="(todo,index) in this.filteredTodos"
+			:key="index"
 			class="todoList_list_item" 
+
 		>
 			<todoItem 
 				:description="todo.description"
+				:idTodo="todo.id"
+				:indexTodo="index"
 			/>
 		</li>
 	</ul>
@@ -32,7 +35,7 @@ export default {
 		
 	},
 	computed:{
-		...mapState(['todos'])
+		...mapState(['todos','filteredTodos'])
 	}
 }
 </script>
@@ -40,7 +43,6 @@ export default {
 <style lang="scss">
 .todoList{
 	max-width: 500px;
-	border: 1px solid #4db9e8;
 	&_list { 
 	list-style: none;
 	padding: 0px;

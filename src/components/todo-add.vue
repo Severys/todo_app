@@ -49,8 +49,8 @@ export default {
 
 <style lang="scss" scoped>
 .addTodo {
-  max-width: 494px;
-  margin-bottom: 50px;
+  width: 90%;
+  padding: 20px;
   
   &_input{
   width: 100%;
